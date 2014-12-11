@@ -1,0 +1,21 @@
+{% extends "bases/base_principal.html" %}
+
+{% block title %} 
+	Registro
+{% endblock %}
+
+{% block content %}
+		
+					{% load bootstrap3 %}
+
+				    {# Display a form #}
+
+				    <form action="" method="post">
+				        {% csrf_token %}
+				        {% bootstrap_form form_regi %}
+				        {% buttons %}
+				            <button type="submit" class="btn btn-primary">Registrar</button>
+				        {% endbuttons %}
+				    </form>
+
+{% endblock %}

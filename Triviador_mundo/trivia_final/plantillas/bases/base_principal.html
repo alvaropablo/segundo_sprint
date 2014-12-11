@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{request.session.session_key}}
+    <title>{% block title %} {% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/styles.css" rel="stylesheet">
+    <script src="http://localhost:4000/socket.io/socket.io.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{STATIC_URL}}js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="{{STATIC_URL}}socket/client.js" type="text/javascript"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+  </head>
+  <body>
+    
+    {% include "includes/navegador.html" %}
+    <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="contenido">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
+                 </div>
+            </div>
+    </div>
+    {% include "includes/footer.html" %}
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "bases/base_principal.html" %}
+
+{% block title %} 
+	Temas
+{% endblock %}
+
+{% block content %}
+				{% if not redi %}
+					{% load bootstrap3 %}
+
+				    {# Display a form #}
+
+				    <form action="" method="post">
+				        {% csrf_token %}
+				        {% bootstrap_form form_rom %}
+				        {% buttons %}
+				            <button type="submit" class="btn btn-primary">Insertar</button>
+				        {% endbuttons %}
+				    </form>
+				{% else %}
+		            <script language="javascript">
+				        $(document).ready(function() 
+				        {
+				           $.createRom({{ sala }});//esta funcion esta en el archivo funciones.js
+				        });
+				    </script>
+				{% endif %}
+{% endblock %}

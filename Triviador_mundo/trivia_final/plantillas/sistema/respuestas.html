@@ -1,0 +1,21 @@
+{% extends "bases/base_principal.html" %}
+
+{% block title %} 
+	Respuestas
+{% endblock %}
+
+{% block content %}
+		
+					{% load bootstrap3 %}
+
+				    {# Display a form #}
+
+				    <form action="" method="post">
+				        {% csrf_token %}
+				        {% bootstrap_form form_respuesta %}
+				        {% buttons %}
+				            <button type="submit" class="btn btn-primary">Insertar</button>
+				        {% endbuttons %}
+				    </form>
+
+{% endblock %}
